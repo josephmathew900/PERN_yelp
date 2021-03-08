@@ -1,14 +1,14 @@
 import React from "react";
 import AddRestaurant from "../components/AddRestaurant";
 import Header from "../components/Header";
-import RestaurantDetailPage from "./RestaurantDetailPage";
+import RestaurantList from "../components/RestaurantList";
 
 function Home() {
   return (
     <div>
       <Header />
       <AddRestaurant />
-      <RestaurantDetailPage />
+      <RestaurantList />
     </div>
   );
 }
