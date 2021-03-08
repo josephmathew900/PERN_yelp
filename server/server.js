@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const db = require("./db");
+const cors = require("cors");
 
 const app = express();
 const morgan = require("morgan");
 
+app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 
@@ -15,7 +17,7 @@ app.get("/api/v1/restaurants", async (req, res) => {
     res.status(200).json({
       status: "success",
       results: results.rows.length,
-      data: { restaurant: results.rows },
+      data: { restaurants: results.rows },
     });
   } catch (error) {
     console.log(error);
