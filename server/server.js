@@ -33,7 +33,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      data: results.rows[0],
+      data: { restaurant: results.rows[0] },
     });
   } catch (error) {
     console.log(error);
@@ -48,9 +48,9 @@ app.post("/api/v1/restaurants", async (req, res) => {
       [name, location, price_range]
     );
 
-    res.status(200).json({
+    res.status(201).json({
       status: "success",
-      data: results.rows[0],
+      data: { restaurant: results.rows[0] },
     });
   } catch (error) {
     console.log(error);
@@ -67,7 +67,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
     );
     res.status(200).json({
       status: "success",
-      data: results.rows[0],
+      data: { restaurant: results.rows[0] },
     });
   } catch (error) {
     console.log(error);
